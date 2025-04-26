@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenuItem, SidebarMenuButton,  SidebarMenu } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
-import { Bot, CreditCard, LayoutDashboard, Presentation } from "lucide-react"
+import { Bot, CreditCard, LayoutDashboard, PlusSquareIcon, Presentation } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -43,7 +43,11 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" variant="floating">
       <SidebarHeader>
-        Logo
+        <div className="flex items-center gap-2">
+          <img src="/logo.jpg" alt="Logo" className="w-8 h-8" />
+          <span className="text-lg font-bold">Glitch-Up</span>
+        </div>
+        
       </SidebarHeader>
       <SidebarContent className="flex flex-col gap-2">
         <SidebarGroup>
@@ -100,6 +104,7 @@ export function AppSidebar() {
                 <SidebarMenuItem>
                   <Link href='/create'>  
                   <Button size='sm' variant="outline" className="w-fit mt-2">
+                    <PlusSquareIcon />
                 Create Project 
               </Button>
               </Link>
